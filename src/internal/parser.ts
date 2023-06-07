@@ -722,8 +722,8 @@ export const language = P.createLanguage({
 
 	search: r => {
 		const button = P.alt([
-			P.regexp(/\[(検索|search)\]/i),
-			P.regexp(/(検索|search)/i),
+			P.regexp(/\[(検索|search|검색)\]/i),
+			P.regexp(/(検索|search|검색)/i),
 		]);
 		return P.seq([
 			newLine.option(),

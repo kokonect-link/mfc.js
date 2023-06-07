@@ -219,6 +219,20 @@ hoge`;
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});
+			test('검색', () => {
+				const input = 'MFM 書き方 123 검색';
+				const output = [
+					SEARCH('MFM 書き方 123', input)
+				];
+				assert.deepStrictEqual(mfm.parse(input), output);
+			});
+			test('[검색]', () => {
+				const input = 'MFM 書き方 123 [검색]';
+				const output = [
+					SEARCH('MFM 書き方 123', input)
+				];
+				assert.deepStrictEqual(mfm.parse(input), output);
+			});
 		});
 		test('ブロックの前後にあるテキストが正しく解釈される', () => {
 			const input = 'abc\nhoge piyo bebeyo 検索\n123';
