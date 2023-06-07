@@ -8,6 +8,9 @@ node_modules
 built
 temp
 
+# Intelij-IDEA
+/.idea
+
 coverage
 
 src/internal/parser.js
