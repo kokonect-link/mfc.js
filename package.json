@@ -1,6 +1,6 @@
 {
   "name": "mfm-js",
-  "version": "0.23.2",
+  "version": "0.23.3-cp-1.0.0",
   "description": "An MFM parser implementation with TypeScript",
   "main": "./built/index.js",
   "types": "./built/index.d.ts",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/misskey-dev/mfm.js.git"
+    "url": "git+https://github.com/kokonect-link/mfm.js.git"
   },
   "author": "Marihachi",
   "license": "MIT",

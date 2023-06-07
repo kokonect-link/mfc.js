@@ -444,16 +444,13 @@ export const language = P.createLanguage({
 			if (!result.success) {
 				return result;
 			}
-			if (state.fnNameList != null && !state.fnNameList.includes(result.value)) {
-				return P.failure();
-			}
 			return P.success(result.index, result.value);
 		});
 		const arg: P.Parser<ArgPair> = P.seq([
 			P.regexp(/[a-z0-9_]+/i),
 			P.seq([
 				P.str('='),
-				P.regexp(/[a-z0-9_.]+/i),
+				P.regexp(/[a-z0-9_.-]+/i),
 			], 1).option(),
 		]).map(result => {
 			return {
@@ -628,23 +625,13 @@ export const language = P.createLanguage({
 	emojiCode: r => {
 		const side = P.notMatch(P.regexp(/[a-z0-9]/i));
 		const mark = P.str(':');
-		const parser = P.seq([
+		return P.seq([
 			P.alt([P.lineBegin, side]),
 			mark,
 			P.regexp(/[a-z0-9_+-]+/i),
 			mark,
 			P.alt([P.lineEnd, side]),
-		], 2);
-		return new P.Parser((input, index, state) => {
-			const result = parser.handler(input, index, state);
-			if (!result.success) {
-				return P.failure();
-			}
-			if (state.emojiCodeList != null && !state.emojiCodeList.includes(result.value)) {
-				return P.failure();
-			}
-			return P.success(result.index, M.EMOJI_CODE(result.value as string));
-		});
+		], 2).map(name => M.EMOJI_CODE(name as string));
 	},
 
 	link: r => {
@@ -735,8 +722,8 @@ export const language = P.createLanguage({
 
 	search: r => {
 		const button = P.alt([
-			P.regexp(/\[(検索|search)\]/i),
-			P.regexp(/(検索|search)/i),
+			P.regexp(/\[(検索|search|검색)\]/i),
+			P.regexp(/(検索|search|검색)/i),
 		]);
 		return P.seq([
 			newLine.option(),

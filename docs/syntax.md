@@ -60,8 +60,10 @@
 ```
 MFM 書き方 Search
 MFM 書き方 検索
+MFM 書き方 검색
 MFM 書き方 [Search]
 MFM 書き方 [検索]
+MFM 書き方 [검색]
 ```
 
 ## 詳細
@@ -395,7 +397,7 @@ _italic_
 
 ## 形式
 ```
-@user@misskey.io
+@user@kokonect.link
 ```
 ```
 @user
@@ -420,8 +422,8 @@ _italic_
   type: 'mention',
   props: {
     username: 'user',
-    host: 'misskey.io',
-    acct: '@user@misskey.io'
+    host: 'kokonect.link',
+    acct: '@user@kokonect.link'
   }
 }
 ```
@@ -471,7 +473,7 @@ _italic_
 ## 形式
 構文1:
 ```
-https://misskey.io/@ai
+https://kokonect.link/@ai
 ```
 
 ```
@@ -480,7 +482,7 @@ http://hoge.jp/abc
 
 構文2:
 ```
-<https://misskey.io/@ai>
+<https://kokonect.link/@ai>
 ```
 
 ```
@@ -502,7 +504,7 @@ http://hoge.jp/abc
 {
   type: 'url',
   props: {
-    url: 'https://misskey.io/@ai'
+    url: 'https://kokonect.link/@ai'
   }
 }
 ```
@@ -513,7 +515,7 @@ http://hoge.jp/abc
 {
   type: 'url',
   props: {
-    url: 'https://misskey.io/@ai',
+    url: 'https://kokonect.link/@ai',
     brackets: false
   }
 }
@@ -524,7 +526,7 @@ http://hoge.jp/abc
 {
   type: 'url',
   props: {
-    url: 'https://misskey.io/@ai',
+    url: 'https://kokonect.link/@ai',
     brackets: true
   }
 }
@@ -537,12 +539,12 @@ http://hoge.jp/abc
 ## 形式
 silent=false
 ```
-[Misskey.io](https://misskey.io/)
+[kokonect.link](https://kokonect.link/)
 ```
 
 silent=true
 ```
-?[Misskey.io](https://misskey.io/)
+?[kokonect.link](https://kokonect.link/)
 ```
 
 ## 詳細
@@ -555,13 +557,13 @@ silent=true
     type: 'link',
     props: {
       silent: false,
-      url: 'https://misskey.io/'
+      url: 'https://kokonect.link/'
     },
     children: [
       {
         type: 'text',
         props: {
-          text: 'Misskey.io'
+          text: 'kokonect.link'
         }
       }
     ]
@@ -611,7 +613,7 @@ $[shake.speed=1s 🍮]
 ```
 
 ```
-$[flip.h,v MisskeyでFediverseの世界が広がります]
+$[flip.h,v CherryPickでFediverseの世界が広がります]
 ```
 
 ## 詳細
