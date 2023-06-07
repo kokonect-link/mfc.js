@@ -700,20 +700,20 @@ hoge`;
 		});
 
 		test('basic remote', () => {
-			const input = '@abc@misskey.io';
-			const output = [MENTION('abc', 'misskey.io', '@abc@misskey.io')];
+			const input = '@abc@kokonect.link';
+			const output = [MENTION('abc', 'kokonect.link', '@abc@kokonect.link')];
 			assert.deepStrictEqual(mfm.parse(input), output);
 		});
 
 		test('basic remote 2', () => {
-			const input = 'before @abc@misskey.io after';
-			const output = [TEXT('before '), MENTION('abc', 'misskey.io', '@abc@misskey.io'), TEXT(' after')];
+			const input = 'before @abc@kokonect.link after';
+			const output = [TEXT('before '), MENTION('abc', 'kokonect.link', '@abc@kokonect.link'), TEXT(' after')];
 			assert.deepStrictEqual(mfm.parse(input), output);
 		});
 
 		test('basic remote 3', () => {
-			const input = 'before\n@abc@misskey.io\nafter';
-			const output = [TEXT('before\n'), MENTION('abc', 'misskey.io', '@abc@misskey.io'), TEXT('\nafter')];
+			const input = 'before\n@abc@kokonect.link\nafter';
+			const output = [TEXT('before\n'), MENTION('abc', 'kokonect.link', '@abc@kokonect.link'), TEXT('\nafter')];
 			assert.deepStrictEqual(mfm.parse(input), output);
 		});
 
@@ -919,27 +919,27 @@ hoge`;
 
 	describe('url', () => {
 		test('basic', () => {
-			const input = 'https://misskey.io/@ai';
+			const input = 'https://kokonect.link/@ai';
 			const output = [
-				N_URL('https://misskey.io/@ai'),
+				N_URL('https://kokonect.link/@ai'),
 			];
 			assert.deepStrictEqual(mfm.parse(input), output);
 		});
 
 		test('with other texts', () => {
-			const input = 'official instance: https://misskey.io/@ai.';
+			const input = 'official instance: https://kokonect.link/@ai.';
 			const output = [
 				TEXT('official instance: '),
-				N_URL('https://misskey.io/@ai'),
+				N_URL('https://kokonect.link/@ai'),
 				TEXT('.')
 			];
 			assert.deepStrictEqual(mfm.parse(input), output);
 		});
 
 		test('ignore trailing period', () => {
-			const input = 'https://misskey.io/@ai.';
+			const input = 'https://kokonect.link/@ai.';
 			const output = [
-				N_URL('https://misskey.io/@ai'),
+				N_URL('https://kokonect.link/@ai'),
 				TEXT('.')
 			];
 			assert.deepStrictEqual(mfm.parse(input), output);
@@ -954,9 +954,9 @@ hoge`;
 		});
 
 		test('ignore trailing periods', () => {
-			const input = 'https://misskey.io/@ai...';
+			const input = 'https://kokonect.link/@ai...';
 			const output = [
-				N_URL('https://misskey.io/@ai'),
+				N_URL('https://kokonect.link/@ai'),
 				TEXT('...')
 			];
 			assert.deepStrictEqual(mfm.parse(input), output);
@@ -1054,9 +1054,9 @@ hoge`;
 
 	describe('link', () => {
 		test('basic', () => {
-			const input = '[official instance](https://misskey.io/@ai).';
+			const input = '[official instance](https://kokonect.link/@ai).';
 			const output = [
-				LINK(false, 'https://misskey.io/@ai', [
+				LINK(false, 'https://kokonect.link/@ai', [
 					TEXT('official instance')
 				]),
 				TEXT('.')
@@ -1065,9 +1065,9 @@ hoge`;
 		});
 
 		test('silent flag', () => {
-			const input = '?[official instance](https://misskey.io/@ai).';
+			const input = '?[official instance](https://kokonect.link/@ai).';
 			const output = [
-				LINK(true, 'https://misskey.io/@ai', [
+				LINK(true, 'https://kokonect.link/@ai', [
 					TEXT('official instance')
 				]),
 				TEXT('.')
@@ -1076,9 +1076,9 @@ hoge`;
 		});
 
 		test('with angle brackets url', () => {
-			const input = '[official instance](<https://misskey.io/@ai>).';
+			const input = '[official instance](<https://kokonect.link/@ai>).';
 			const output = [
-				LINK(false, 'https://misskey.io/@ai', [
+				LINK(false, 'https://kokonect.link/@ai', [
 					TEXT('official instance')
 				]),
 				TEXT('.')
@@ -1096,24 +1096,24 @@ hoge`;
 
 		describe('cannot nest a url in a link label', () => {
 			test('basic', () => {
-				const input = 'official instance: [https://misskey.io/@ai](https://misskey.io/@ai).';
+				const input = 'official instance: [https://kokonect.link/@ai](https://kokonect.link/@ai).';
 				const output = [
 					TEXT('official instance: '),
-					LINK(false, 'https://misskey.io/@ai', [
-						TEXT('https://misskey.io/@ai'),
+					LINK(false, 'https://kokonect.link/@ai', [
+						TEXT('https://kokonect.link/@ai'),
 					]),
 					TEXT('.'),
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});
 			test('nested', () => {
-				const input = 'official instance: [https://misskey.io/@ai**https://misskey.io/@ai**](https://misskey.io/@ai).';
+				const input = 'official instance: [https://kokonect.link/@ai**https://kokonect.link/@ai**](https://kokonect.link/@ai).';
 				const output = [
 					TEXT('official instance: '),
-					LINK(false, 'https://misskey.io/@ai', [
-						TEXT('https://misskey.io/@ai'),
+					LINK(false, 'https://kokonect.link/@ai', [
+						TEXT('https://kokonect.link/@ai'),
 						BOLD([
-							TEXT('https://misskey.io/@ai'),
+							TEXT('https://kokonect.link/@ai'),
 						]),
 					]),
 					TEXT('.'),
@@ -1124,25 +1124,25 @@ hoge`;
 
 		describe('cannot nest a link in a link label', () => {
 			test('basic', () => {
-				const input = 'official instance: [[https://misskey.io/@ai](https://misskey.io/@ai)](https://misskey.io/@ai).';
+				const input = 'official instance: [[https://kokonect.link/@ai](https://kokonect.link/@ai)](https://kokonect.link/@ai).';
 				const output = [
 					TEXT('official instance: '),
-					LINK(false, 'https://misskey.io/@ai', [
-						TEXT('[https://misskey.io/@ai'),
+					LINK(false, 'https://kokonect.link/@ai', [
+						TEXT('[https://kokonect.link/@ai'),
 					]),
 					TEXT(']('),
-					N_URL('https://misskey.io/@ai'),
+					N_URL('https://kokonect.link/@ai'),
 					TEXT(').'),
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});
 			test('nested', () => {
-				const input = 'official instance: [**[https://misskey.io/@ai](https://misskey.io/@ai)**](https://misskey.io/@ai).';
+				const input = 'official instance: [**[https://kokonect.link/@ai](https://kokonect.link/@ai)**](https://kokonect.link/@ai).';
 				const output = [
 					TEXT('official instance: '),
-					LINK(false, 'https://misskey.io/@ai', [
+					LINK(false, 'https://kokonect.link/@ai', [
 						BOLD([
-							TEXT('[https://misskey.io/@ai](https://misskey.io/@ai)'),
+							TEXT('[https://kokonect.link/@ai](https://kokonect.link/@ai)'),
 						]),
 					]),
 					TEXT('.'),

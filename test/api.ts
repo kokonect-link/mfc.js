@@ -123,8 +123,8 @@ after`;
 		});
 
 		test('hashtag', () => {
-			const input = 'a #misskey b';
-			assert.strictEqual(mfm.toString(mfm.parse(input)), 'a #misskey b');
+			const input = 'a #cherrypick b';
+			assert.strictEqual(mfm.toString(mfm.parse(input)), 'a #cherrypick b');
 		});
 
 		test('link', () => {
