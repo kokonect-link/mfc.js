@@ -1,5 +1,5 @@
 {
-  "name": "mfm-js",
+  "name": "cherrypick-mfm-js",
   "version": "0.23.3-cp-1.0.0",
   "description": "An MFM parser implementation with TypeScript",
   "main": "./built/index.js",
