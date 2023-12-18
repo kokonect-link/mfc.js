@@ -17,7 +17,7 @@ Please see [docs](./docs/index.md) for the detail.
 
 TypeScript:
 ```ts
-import * as mfm from 'mfm-js';
+import * as mfm from 'cherrypick-mfm-js';
 
 const inputText =
 `<center>
