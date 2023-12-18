@@ -1,15 +1,15 @@
 # mfm.js
 An MFM parser implementation with TypeScript.
-[Try it out!](https://runkit.com/npm/mfm-js)
+[Try it out!](https://runkit.com/npm/cherrypick-mfm-js)
 
 [![Test](https://github.com/kokonect-link/mfm.js/actions/workflows/test.yml/badge.svg)](https://github.com/kokonect-link/mfm.js/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/kokonect-link/mfm.js/branch/develop/graph/badge.svg?token=irAWFiHK8T)](https://codecov.io/gh/kokonect-link/mfm.js)
 
-[![NPM](https://nodei.co/npm/mfm-js.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/mfm-js)
+[![NPM](https://nodei.co/npm/cherrypick-mfm-js.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/cherrypick-mfm-js)
 
 ## Installation
 ```
-npm i mfm-js
+npm i cherrypick-mfm-js
 ```
 
 ## Usage
