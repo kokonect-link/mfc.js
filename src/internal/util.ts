@@ -136,7 +136,7 @@ export function stringifyTree(nodes: MfmNode[]): string {
 		// block -> inline  : Yes
 		// block -> block   : Yes
 
-		let pushLf: boolean = true;
+		let pushLf = true;
 		if (isMfmBlock(node)) {
 			if (state === stringifyState.none) {
 				pushLf = false;
