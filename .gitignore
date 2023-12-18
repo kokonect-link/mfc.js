@@ -5,6 +5,7 @@ node_modules
 .vscode
 
 # app dir
+built
 temp
 
 # Intelij-IDEA
