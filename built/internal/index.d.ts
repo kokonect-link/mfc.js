@@ -1,5 +1,5 @@
 import * as M from '..';
-export declare type FullParserOpts = {
+export type FullParserOpts = {
     nestLimit?: number;
 };
 export declare function fullParser(input: string, opts: FullParserOpts): M.MfmNode[];

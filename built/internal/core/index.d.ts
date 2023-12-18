@@ -1,13 +1,13 @@
-export declare type Success<T> = {
+export type Success<T> = {
     success: true;
     value: T;
     index: number;
 };
-export declare type Failure = {
+export type Failure = {
     success: false;
 };
-export declare type Result<T> = Success<T> | Failure;
-export declare type ParserHandler<T> = (input: string, index: number, state: any) => Result<T>;
+export type Result<T> = Success<T> | Failure;
+export type ParserHandler<T> = (input: string, index: number, state: any) => Result<T>;
 export declare function success<T>(index: number, value: T): Success<T>;
 export declare function failure(): Failure;
 export declare class Parser<T> {
