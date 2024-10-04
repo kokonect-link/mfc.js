@@ -21,6 +21,19 @@
 
 이 문서는 CherryPick에서의 사용을 상정한 변경 사항만 포함합니다.
 
+## 0.24.0-cherrypick.5
+출시일: 2024/10/04<br>
+전체 변경 사항을 확인하려면, [CHANGELOG.md#0240](CHANGELOG.md#0240) 문서를 참고하십시오.
+
+### Features
+- feat: parse <plain> in parseSimple (misskey-dev/mfm.js#146)
+
+### Bugfixes
+- fix: lints and kill any (misskey-dev/mfm.js#142)
+- fix: type error (misskey-dev/mfm.js#147)
+
+---
+
 ## 0.24.0-cherrypick.4
 출시일: 2023/12/18<br>
 전체 변경 사항을 확인하려면, [CHANGELOG.md#0240](CHANGELOG.md#0240) 문서를 참고하십시오.
@@ -28,12 +41,16 @@
 ## NOTE
 모듈이 npm을 통해 배포되도록 변경
 
+---
+
 ## 0.24.0-cherrypick.3
 출시일: 2023/12/18<br>
 전체 변경 사항을 확인하려면, [CHANGELOG.md#0240](CHANGELOG.md#0240) 문서를 참고하십시오.
 
 ## NOTE
 cherrypick-mfm-js.api.md를 참조하도록 변경
+
+---
 
 ## 0.23.3-cherrypick.2
 출시일: 2023/06/16<br>
