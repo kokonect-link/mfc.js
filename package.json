@@ -1,5 +1,5 @@
 {
-  "name": "cfm.js",
+  "name": "cfm-js",
   "version": "0.24.0-cherrypick.6",
   "description": "An CFM parser implementation with TypeScript",
   "main": "./built/index.js",

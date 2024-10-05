@@ -9,7 +9,7 @@ An CFM parser implementation with TypeScript.
 
 ## Installation
 ```
-npm i cfm.js
+npm i cfm-js
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ Please see [docs](./docs/index.md) for the detail.
 
 TypeScript:
 ```ts
-import * as cfm from 'cfm.js';
+import * as cfm from 'cfm-js';
 
 const inputText =
 `<center>
