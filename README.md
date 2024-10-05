@@ -1,11 +1,11 @@
 # cfm.js
 An CFM parser implementation with TypeScript.
-[Try it out!](https://runkit.com/npm/cfm.js)
+[Try it out!](https://runkit.com/npm/cfm-js)
 
 [![Test](https://github.com/kokonect-link/cfm.js/actions/workflows/test.yml/badge.svg)](https://github.com/kokonect-link/cfm.js/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/kokonect-link/cfm.js/branch/develop/graph/badge.svg?token=irAWFiHK8T)](https://codecov.io/gh/kokonect-link/cfm.js)
 
-[![NPM](https://nodei.co/npm/cfm.js.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/cfm.js)
+[![NPM](https://nodei.co/npm/cfm-js.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/cfm-js)
 
 ## Installation
 ```
