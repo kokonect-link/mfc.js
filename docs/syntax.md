@@ -58,9 +58,6 @@
 
 ## 形式
 ```
-CFM 書き方 Search
-CFM 書き方 検索
-CFM 書き方 검색
 CFM 書き方 [Search]
 CFM 書き方 [検索]
 CFM 書き方 [검색]

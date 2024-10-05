@@ -177,27 +177,6 @@ hoge`;
 
 	describe('search', () => {
 		describe('検索構文を使用できる', () => {
-			test('Search', () => {
-				const input = 'CFM 書き方 123 Search';
-				const output = [
-					SEARCH('CFM 書き方 123', input)
-				];
-				assert.deepStrictEqual(mfm.parse(input), output);
-			});
-			test('[Search]', () => {
-				const input = 'CFM 書き方 123 [Search]';
-				const output = [
-					SEARCH('CFM 書き方 123', input)
-				];
-				assert.deepStrictEqual(mfm.parse(input), output);
-			});
-			test('search', () => {
-				const input = 'CFM 書き方 123 search';
-				const output = [
-					SEARCH('CFM 書き方 123', input)
-				];
-				assert.deepStrictEqual(mfm.parse(input), output);
-			});
 			test('[search]', () => {
 				const input = 'CFM 書き方 123 [search]';
 				const output = [
@@ -205,22 +184,8 @@ hoge`;
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});
-			test('検索', () => {
-				const input = 'CFM 書き方 123 検索';
-				const output = [
-					SEARCH('CFM 書き方 123', input)
-				];
-				assert.deepStrictEqual(mfm.parse(input), output);
-			});
 			test('[検索]', () => {
 				const input = 'CFM 書き方 123 [検索]';
-				const output = [
-					SEARCH('CFM 書き方 123', input)
-				];
-				assert.deepStrictEqual(mfm.parse(input), output);
-			});
-			test('검색', () => {
-				const input = 'CFM 書き方 123 검색';
 				const output = [
 					SEARCH('CFM 書き方 123', input)
 				];
@@ -238,7 +203,7 @@ hoge`;
 			const input = 'abc\nhoge piyo bebeyo 検索\n123';
 			const output = [
 				TEXT('abc'),
-				SEARCH('hoge piyo bebeyo', 'hoge piyo bebeyo 検索'),
+				SEARCH('hoge piyo bebeyo', 'hoge piyo bebeyo [検索]'),
 				TEXT('123')
 			];
 			assert.deepStrictEqual(mfm.parse(input), output);

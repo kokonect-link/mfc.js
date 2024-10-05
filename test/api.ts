@@ -36,8 +36,8 @@ after`;
 		});
 
 
-		test('search', () => {
-			const input = 'CFM 書き方 123 Search';
+		test('[search]', () => {
+			const input = 'CFM 書き方 123 [Search]';
 			assert.strictEqual(mfm.toString(mfm.parse(input)), input);
 		});
 

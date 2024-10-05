@@ -21,6 +21,19 @@
 
 이 문서는 CherryPick에서의 사용을 상정한 변경 사항만 포함합니다.
 
+## 0.x.x-cherrypick-x
+출시일: unreleased<br>
+전체 변경 사항을 확인하려면, [CHANGELOG.md#0xxx](CHANGELOG.md#0xxx) 문서를 참고하십시오.
+
+### Improvements
+- 의도하지 않게 `검색`으로 검색할 수 있던 부분을 개선
+  - 이제 노트에서 검색 블록을 활성화 하려면 `[검색]`으로 지정해야 합니다.
+
+### Bugfixes
+- 사용자 이름에 `.`이 있는 경우 멘션을 할 수 없음
+
+---
+
 ## 0.24.0-cherrypick.7
 출시일: 2024/10/05<br>
 전체 변경 사항을 확인하려면, [CHANGELOG.md#0240](CHANGELOG.md#0240) 문서를 참고하십시오.

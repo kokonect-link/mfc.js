@@ -552,7 +552,7 @@ export const language = P.createLanguage<TypeTable>({
 		const parser = P.seq(
 			notLinkLabel,
 			P.str('@'),
-			P.regexp(/[a-z0-9_-]+/i),
+			P.regexp(/[a-z0-9_.-]+/i),
 			P.seq(
 				P.str('@'),
 				P.regexp(/[a-z0-9_.-]+/i),
@@ -769,7 +769,6 @@ export const language = P.createLanguage<TypeTable>({
 	search: () => {
 		const button = P.alt([
 			P.regexp(/\[(検索|search|검색)\]/i),
-			P.regexp(/(検索|search|검색)/i),
 		]);
 		return P.seq(
 			newLine.option(),
