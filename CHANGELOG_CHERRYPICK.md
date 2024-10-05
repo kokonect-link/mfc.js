@@ -21,6 +21,15 @@
 
 이 문서는 CherryPick에서의 사용을 상정한 변경 사항만 포함합니다.
 
+## 0.24.0-cherrypick.7
+출시일: 2024/10/05<br>
+전체 변경 사항을 확인하려면, [CHANGELOG.md#0240](CHANGELOG.md#0240) 문서를 참고하십시오.
+
+### Bugfixes
+- 패키지를 설치할 수 없음
+
+---
+
 ## 0.24.0-cherrypick.6
 출시일: 2024/10/05<br>
 전체 변경 사항을 확인하려면, [CHANGELOG.md#0240](CHANGELOG.md#0240) 문서를 참고하십시오.
