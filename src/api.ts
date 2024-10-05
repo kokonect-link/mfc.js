@@ -3,7 +3,7 @@ import { inspectOne, stringifyNode, stringifyTree } from './internal/util';
 import { MfmNode, MfmSimpleNode } from './node';
 
 /**
- * Generates a MfmNode tree from the MFM string.
+ * Generates a MfmNode tree from the CFM string.
 */
 export function parse(input: string, opts: Partial<{ nestLimit: number; }> = {}): MfmNode[] {
 	const nodes = fullParser(input, {
@@ -13,7 +13,7 @@ export function parse(input: string, opts: Partial<{ nestLimit: number; }> = {})
 }
 
 /**
- * Generates a MfmSimpleNode tree from the MFM string.
+ * Generates a MfmSimpleNode tree from the CFM string.
 */
 export function parseSimple(input: string): MfmSimpleNode[] {
 	const nodes = simpleParser(input);
@@ -21,7 +21,7 @@ export function parseSimple(input: string): MfmSimpleNode[] {
 }
 
 /**
- * Generates a MFM string from the MfmNode tree.
+ * Generates a CFM string from the MfmNode tree.
 */
 export function toString(tree: MfmNode[]): string
 export function toString(node: MfmNode): string

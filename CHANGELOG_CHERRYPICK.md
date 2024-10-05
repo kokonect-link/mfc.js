@@ -1,7 +1,7 @@
 <!--
-## 0.x.x-cp-1.x.x
+## 0.x.x-cherrypick-x
 출시일: unreleased<br>
-전체 변경 사항을 확인하려면, [CHANGELOG.md#13xx](CHANGELOG.md#0xxx) 문서를 참고하십시오.
+전체 변경 사항을 확인하려면, [CHANGELOG.md#0xxx](CHANGELOG.md#0xxx) 문서를 참고하십시오.
 
 ## NOTE
 
@@ -20,6 +20,15 @@
 # 릴리즈 노트
 
 이 문서는 CherryPick에서의 사용을 상정한 변경 사항만 포함합니다.
+
+## 0.x.x-cherrypick-x
+출시일: unreleased<br>
+전체 변경 사항을 확인하려면, [CHANGELOG.md#0xxx](CHANGELOG.md#0xxx) 문서를 참고하십시오.
+
+## NOTE
+- cherrypick-mfm-js를 cfm-js로 변경
+
+---
 
 ## 0.24.0-cherrypick.5
 출시일: 2024/10/04<br>
