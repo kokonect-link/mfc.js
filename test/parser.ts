@@ -178,58 +178,58 @@ hoge`;
 	describe('search', () => {
 		describe('検索構文を使用できる', () => {
 			test('Search', () => {
-				const input = 'MFM 書き方 123 Search';
+				const input = 'CFM 書き方 123 Search';
 				const output = [
-					SEARCH('MFM 書き方 123', input)
+					SEARCH('CFM 書き方 123', input)
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});
 			test('[Search]', () => {
-				const input = 'MFM 書き方 123 [Search]';
+				const input = 'CFM 書き方 123 [Search]';
 				const output = [
-					SEARCH('MFM 書き方 123', input)
+					SEARCH('CFM 書き方 123', input)
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});
 			test('search', () => {
-				const input = 'MFM 書き方 123 search';
+				const input = 'CFM 書き方 123 search';
 				const output = [
-					SEARCH('MFM 書き方 123', input)
+					SEARCH('CFM 書き方 123', input)
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});
 			test('[search]', () => {
-				const input = 'MFM 書き方 123 [search]';
+				const input = 'CFM 書き方 123 [search]';
 				const output = [
-					SEARCH('MFM 書き方 123', input)
+					SEARCH('CFM 書き方 123', input)
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});
 			test('検索', () => {
-				const input = 'MFM 書き方 123 検索';
+				const input = 'CFM 書き方 123 検索';
 				const output = [
-					SEARCH('MFM 書き方 123', input)
+					SEARCH('CFM 書き方 123', input)
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});
 			test('[検索]', () => {
-				const input = 'MFM 書き方 123 [検索]';
+				const input = 'CFM 書き方 123 [検索]';
 				const output = [
-					SEARCH('MFM 書き方 123', input)
+					SEARCH('CFM 書き方 123', input)
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});
 			test('검색', () => {
-				const input = 'MFM 書き方 123 검색';
+				const input = 'CFM 書き方 123 검색';
 				const output = [
-					SEARCH('MFM 書き方 123', input)
+					SEARCH('CFM 書き方 123', input)
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});
 			test('[검색]', () => {
-				const input = 'MFM 書き方 123 [검색]';
+				const input = 'CFM 書き方 123 [검색]';
 				const output = [
-					SEARCH('MFM 書き方 123', input)
+					SEARCH('CFM 書き方 123', input)
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});
@@ -1206,6 +1206,14 @@ hoge`;
 			];
 			assert.deepStrictEqual(mfm.parse(input), output);
 		});
+
+		test('bad url in url part', () => {
+			const input = "[test](http://..)";
+			const output = [
+				TEXT("[test](http://..)")
+			];
+			assert.deepStrictEqual(mfm.parse(input), output);
+		})
 	});
 
 	describe('fn', () => {

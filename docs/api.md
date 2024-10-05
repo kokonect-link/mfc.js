@@ -1,6 +1,6 @@
 ## parse API
 入力文字列からノードツリーを生成します。  
-全てのMFM構文を利用可能です。  
+全てのCFM構文を利用可能です。  
 
 例:  
 ```ts
@@ -31,7 +31,7 @@ console.log(JSON.stringify(nodes));
 ```
 
 ## toString API
-ノードツリーからMFM文字列を生成します。
+ノードツリーからCFM文字列を生成します。
 
 例:  
 ```ts

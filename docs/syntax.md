@@ -20,7 +20,7 @@
 - [URL](#url)
 - [リンク](#link)
 - [絵文字コード(カスタム絵文字)](#emoji-code)
-- [MFM関数](#fn)
+- [CFM関数](#fn)
 - [Unicode絵文字](#unicode-emoji)
 - [テキスト](#text)
 
@@ -58,12 +58,12 @@
 
 ## 形式
 ```
-MFM 書き方 Search
-MFM 書き方 検索
-MFM 書き方 검색
-MFM 書き方 [Search]
-MFM 書き方 [検索]
-MFM 書き方 [검색]
+CFM 書き方 Search
+CFM 書き方 検索
+CFM 書き方 검색
+CFM 書き方 [Search]
+CFM 書き方 [検索]
+CFM 書き方 [검색]
 ```
 
 ## 詳細
@@ -74,8 +74,8 @@ MFM 書き方 [검색]
 {
   type: 'search',
   props: {
-    query: 'MFM 書き方',
-    content: 'MFM 書き方 Search'
+    query: 'CFM 書き方',
+    content: 'CFM 書き方 Search'
   }
 }
 ```
