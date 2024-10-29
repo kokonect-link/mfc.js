@@ -1,6 +1,6 @@
 {
   "name": "mfc-js",
-  "version": "0.24.0-cherrypick.8",
+  "version": "0.24.0-cherrypick.9",
   "description": "An MFC parser implementation with TypeScript",
   "main": "./built/index.js",
   "types": "./built/index.d.ts",
