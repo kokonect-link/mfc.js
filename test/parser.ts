@@ -178,23 +178,23 @@ hoge`;
 	describe('search', () => {
 		describe('検索構文を使用できる', () => {
 			test('[search]', () => {
-				const input = 'CFM 書き方 123 [search]';
+				const input = 'MFC 書き方 123 [search]';
 				const output = [
-					SEARCH('CFM 書き方 123', input)
+					SEARCH('MFC 書き方 123', input)
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});
 			test('[検索]', () => {
-				const input = 'CFM 書き方 123 [検索]';
+				const input = 'MFC 書き方 123 [検索]';
 				const output = [
-					SEARCH('CFM 書き方 123', input)
+					SEARCH('MFC 書き方 123', input)
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});
 			test('[검색]', () => {
-				const input = 'CFM 書き方 123 [검색]';
+				const input = 'MFC 書き方 123 [검색]';
 				const output = [
-					SEARCH('CFM 書き方 123', input)
+					SEARCH('MFC 書き方 123', input)
 				];
 				assert.deepStrictEqual(mfm.parse(input), output);
 			});

@@ -1,7 +1,7 @@
 {
-  "name": "cfm-js",
+  "name": "mfc-js",
   "version": "0.24.0-cherrypick.8",
-  "description": "An CFM parser implementation with TypeScript",
+  "description": "An MFC parser implementation with TypeScript",
   "main": "./built/index.js",
   "types": "./built/index.d.ts",
   "scripts": {
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kokonect-link/cfm.js.git"
+    "url": "git+https://github.com/kokonect-link/mfc.js.git"
   },
   "author": "Marihachi",
   "license": "MIT",

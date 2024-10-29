@@ -116,7 +116,7 @@ export function stringifyNode(node: MfmNode): string {
 			return node.props.text;
 		}
 	}
-	throw new Error('unknown cfm node');
+	throw new Error('unknown mfc node');
 }
 
 enum stringifyState {

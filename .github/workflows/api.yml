@@ -37,4 +37,4 @@ jobs:
 
       - name: Show report
         if: always()
-        run: cat temp/cfm-js.api.md
+        run: cat temp/mfc-js.api.md
