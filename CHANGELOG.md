@@ -17,6 +17,7 @@
 
 ### Changes
 - allow `.` in mentions (like `@bsky.brid.gy@bsky.brid.gy`)
+- Heterograph selectors (`U+FE0F`) adjacent to unicode emojis is now treated as character strings
 
 ## 0.24.0
 ### Features
