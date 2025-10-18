@@ -1,14 +1,14 @@
-import * as M from '..';
-import * as P from './core';
-import { mergeText } from './util';
-import { SeqParseResult } from './core';
-
 // NOTE:
 // tsdのテストでファイルを追加しているにも関わらず「@twemoji/parser/dist/lib/regex」の型定義ファイルがないとエラーが出るため、
 // このエラーを無視する。
 /* eslint @typescript-eslint/ban-ts-comment: 1 */
 // @ts-ignore
 import twemojiRegex from '@twemoji/parser/dist/lib/regex';
+
+import * as M from '..';
+import * as P from './core';
+import { mergeText } from './util';
+import { SeqParseResult } from './core';
 
 type ArgPair = { k: string, v: string | true };
 type Args = Record<string, string | true>;
@@ -22,7 +22,7 @@ function seqOrText<Parsers extends P.Parser<unknown>[]>(...parsers: Parsers): P.
 		// TODO: typesafe implementation
 		const accum: unknown[] = [];
 		let latestIndex = index;
-		for (let i = 0 ; i < parsers.length; i++) {
+		for (let i = 0; i < parsers.length; i++) {
 			const result = parsers[i].handler(input, latestIndex, state);
 			if (!result.success) {
 				if (latestIndex === index) {
@@ -84,7 +84,7 @@ interface TypeTable {
 	italicUnder: M.NodeType<'italic'>,
 	strikeTag: M.NodeType<'strike'> | string,
 	strikeWave: M.NodeType<'strike'> | string,
-	unicodeEmoji: M.NodeType<'unicodeEmoji'>,
+	unicodeEmoji: M.NodeType<'unicodeEmoji'> | string,
 	plainTag: M.NodeType<'plain'>,
 	fn: M.NodeType<'fn'> | string,
 	inlineCode: M.NodeType<'inlineCode'>,
@@ -458,7 +458,10 @@ export const language = P.createLanguage<TypeTable>({
 
 	unicodeEmoji: () => {
 		const emoji = RegExp(twemojiRegex.source);
-		return P.regexp(emoji).map(content => M.UNI_EMOJI(content));
+		return P.regexp(emoji).map(content => {
+			// 異体字セレクタ(U+FE0F)の場合は文字として返す
+			return content === '\uFE0F' ? content : M.UNI_EMOJI(content);
+		});
 	},
 
 	plainTag: () => {
@@ -586,9 +589,9 @@ export const language = P.createLanguage<TypeTable>({
 					}
 				}
 			}
-			// remove "-" of tail of username
+			// remove [.-] of tail of username
 			let modifiedName = username;
-			result = /-+$/.exec(username);
+			result = /[.-]+$/.exec(username);
 			if (result != null) {
 				if (modifiedHost == null) {
 					modifiedName = username.slice(0, (-1 * result[0].length));
@@ -597,8 +600,8 @@ export const language = P.createLanguage<TypeTable>({
 					invalidMention = true;
 				}
 			}
-			// disallow "-" of head of username
-			if (modifiedName.length === 0 || modifiedName[0] === '-') {
+			// disallow [.-] of head of username
+			if (modifiedName.length === 0 || /^[.-]/.test(modifiedName)) {
 				invalidMention = true;
 			}
 			// disallow [.-] of head of hostname

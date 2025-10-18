@@ -1,3 +1,4 @@
+import { describe, test } from 'vitest';
 import assert from 'assert';
 import * as mfm from '../src/index';
 import {
@@ -12,7 +13,7 @@ describe('API', () => {
 <center>
 Hello $[tada everynyan! 🎉]
 
-I'm @ai, A bot of misskey!
+I'm @ai, A bot of cherrypick!
 
 https://github.com/syuilo/ai
 </center>

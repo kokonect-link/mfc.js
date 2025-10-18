@@ -1,3 +1,4 @@
+import { describe, test } from 'vitest';
 import assert from 'assert';
 import * as mfm from '../src/index';
 import {
@@ -49,6 +50,12 @@ describe('SimpleParser', () => {
 			const output = [TEXT('あ'), EMOJI_CODE('bar'), TEXT('い')];
 			assert.deepStrictEqual(mfm.parseSimple(input), output);
 		});
+
+		test('Ignore Variation Selector preceded by Unicode Emoji', () => {
+			const input = '\uFE0F';
+			const output = [TEXT('\uFE0F')];
+			assert.deepStrictEqual(mfm.parseSimple(input), output);
+		})
 	});
 
 	test('disallow other syntaxes', () => {
@@ -107,7 +114,7 @@ describe('FullParser', () => {
 		test('引用ブロックはインライン構文を含んだブロックをネストできる', () => {
 			const input = `
 > <center>
-> I'm @ai, An bot of misskey!
+> I'm @ai, An bot of cherrypick!
 > </center>
 `;
 			const output = [
@@ -115,7 +122,7 @@ describe('FullParser', () => {
 					CENTER([
 						TEXT('I\'m '),
 						MENTION('ai', null, '@ai'),
-						TEXT(', An bot of misskey!'),
+						TEXT(', An bot of cherrypick!'),
 					])
 				])
 			];
@@ -712,6 +719,12 @@ hoge`;
 			assert.deepStrictEqual(mfm.parse(input), output);
 		});
 
+		test('allow "." in username', () => {
+			const input = '@bsky.brid.gy@bsky.brid.gy';
+			const output = [MENTION('bsky.brid.gy', 'bsky.brid.gy', '@bsky.brid.gy@bsky.brid.gy')];
+			assert.deepStrictEqual(mfm.parse(input), output);
+		});
+
 		test('disallow "-" in head of username', () => {
 			const input = '@-abc';
 			const output = [TEXT('@-abc')];
@@ -721,6 +734,18 @@ hoge`;
 		test('disallow "-" in tail of username', () => {
 			const input = '@abc-';
 			const output = [MENTION('abc', null, '@abc'), TEXT('-')];
+			assert.deepStrictEqual(mfm.parse(input), output);
+		});
+
+		test('disallow "." in head of username', () => {
+			const input = '@.abc';
+			const output = [TEXT('@.abc')];
+			assert.deepStrictEqual(mfm.parse(input), output);
+		});
+
+		test('disallow "." in tail of username', () => {
+			const input = '@abc.';
+			const output = [MENTION('abc', null, '@abc'), TEXT('.')];
 			assert.deepStrictEqual(mfm.parse(input), output);
 		});
 
@@ -1469,7 +1494,7 @@ hoge`;
 <center>
 Hello $[tada everynyan! 🎉]
 
-I'm @ai, A bot of misskey!
+I'm @ai, A bot of cherrypick!
 
 https://github.com/syuilo/ai
 </center>
@@ -1484,7 +1509,7 @@ after`;
 				]),
 				TEXT('\n\nI\'m '),
 				MENTION('ai', null, '@ai'),
-				TEXT(', A bot of misskey!\n\n'),
+				TEXT(', A bot of cherrypick!\n\n'),
 				N_URL('https://github.com/syuilo/ai')
 			]),
 			TEXT('after')

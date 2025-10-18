@@ -23,7 +23,7 @@ const inputText =
 `<center>
 Hello $[tada everynyan! 🎉]
 
-I'm @ai, A bot of misskey!
+I'm @ai, A bot of cherrypick!
 
 https://github.com/syuilo/ai
 </center>`;
