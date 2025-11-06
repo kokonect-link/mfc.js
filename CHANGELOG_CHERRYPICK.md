@@ -1,5 +1,5 @@
 <!--
-## 0.x.x-cherrypick-x
+## 0.x.x
 출시일: unreleased<br>
 전체 변경 사항을 확인하려면, [CHANGELOG.md#0xxx](CHANGELOG.md#0xxx) 문서를 참고하십시오.
 
@@ -19,6 +19,17 @@
 
 # 릴리즈 노트
 이 문서는 CherryPick에서의 사용을 상정한 변경 사항만 포함합니다.
+
+## 0.1.0
+출시일: 2025/11/6<br>
+기반 mfm-js 버전: 0.25.0<br>
+전체 변경 사항을 확인하려면, [CHANGELOG.md#0250](CHANGELOG.md#0250) 문서를 참고하십시오.
+
+## NOTE
+- 버전 관리 방식 변경
+- 유니코드 이모지 17.0 대응
+
+---
 
 ## 0.25.0-cherrypick.1
 출시일: 2025/10/18<br>
